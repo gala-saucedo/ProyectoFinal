@@ -1,0 +1,328 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'rubik', sans-serif;
+}
+ul {
+    list-style: none;
+}
+.barra {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    background-color: rgb(25, 29, 64);
+}
+aside {
+    padding: 2rem;
+    color: rgb(255, 255, 255);
+    height: 100vh;
+    top: 0;
+    position: sticky;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.logo {
+    font-weight: 400;
+    font-size: 2rem;
+}
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.boton-menu{
+    background-color: transparent;
+    color: white;
+    border: 0;
+    align-items: center;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.texto-footer {
+    color: rgb(110, 173, 173);
+    font-size: .85rem;
+}
+main {
+    background-color: white;
+    margin: 1rem;
+    padding: 2rem;
+    margin-left: 0;
+    padding: 3rem;
+}
+.titulo-principal {
+   color: rgb(25, 29, 64);
+   margin-bottom: 2rem;
+}
+
+.notificacion {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    z-index: 999;
+}
+
+/* estilos del carrusel */
+
+.swiper {
+    width: 600px;
+    height: 400px;
+}
+.carrusel-img {
+    max-width: 100%;
+    max-height: 300px;
+    width: auto; 
+    height: auto; 
+    object-fit: cover; 
+}
+.swiper-slide {
+    position: relative;
+}
+
+/* Estilos para el botón de compra */
+.comprar-button {
+    position: absolute; 
+    bottom: 10px; 
+    right: 10px; 
+    z-index: 1; 
+    background: rgba(0, 0, 0, 0.5); 
+    color: white;
+    border: none;
+    border-radius: 5px; 
+    padding: 5px 10px; 
+    cursor: pointer; 
+}
+
+/* estilos de todos los productos */
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.cards {
+    width: 250px;
+    height: 350px;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    transition: all 0.3s ease; 
+}
+
+.cards:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.container-img {
+    width: 100%;
+    height: 200px; 
+    border-radius: 10px 10px 0 0; 
+    overflow: hidden;
+}
+
+.container-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+.container-title {
+    font-size: 1.2rem; 
+    margin-bottom: 12px; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    white-space: nowrap; 
+}
+
+.card h4 {
+    font-size: 1rem; 
+    margin-bottom: 10px; 
+}
+
+.add-button {
+    font-size: 0.9rem; 
+    padding: 8px 12px; 
+    background-color: #3498db;
+    color: #fff; 
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; 
+}
+
+.add-button:hover {
+    background-color: #2980b9; 
+}
+
+/* botones de az y za */
+
+#ordenar button {
+    padding: 10px 20px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    background-color: #f0f0f0;
+    color: #333;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* estilo del modo oscuro */
+
+.dark-mode main{
+    background-color: rgb(51, 51, 51); 
+    color: #b8b9bf; 
+}
+.dark-mode .barra {
+    background-color: rgb(10, 10, 27);
+}
+.dark-mode .titulo-principal {
+    color: white;
+}
+.dark-mode-form {
+    color: rgb(0, 0, 0);
+}
+/* boton del modo oscuro */
+
+#modo-oscuro {
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 8px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.dark-mode .producto-carrito h3 {
+    color: white;
+}
+
+/* Estilos para los íconos de luna y sol dentro del botón */
+
+#modo-oscuro i {
+    font-size: 1.5rem;
+    margin: 0 4px; 
+}
+
+#modo-oscuro i.bi-sun-fill {
+    display: none;
+}
+
+body.dark-mode #modo-oscuro i.bi-sun-fill {
+    display: inline-block;
+}
+
+body.dark-mode #modo-oscuro i.bi-moon-fill {
+    display: none;
+}
+
+#modo-oscuro:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 50%; 
+}
+
+/* Estilos para los productos en el carrito */
+
+.producto-carrito {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.3s ease; 
+}
+
+.producto-carrito img {
+    max-width: 80px;
+    max-height: 80px;
+    margin-right: 20px;
+}
+
+.producto-carrito h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.producto-carrito p {
+    font-weight: bold;
+    margin: 0;
+    font-size: 16px;
+    color: #888;
+}
+
+.producto-carrito:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transform: translateY(-3px);
+}
+
+/* estilos del formulario */
+
+form {
+    max-width: 400px; 
+    margin: 20px auto;
+    padding: 30px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+label, input, textarea {
+    margin-bottom: 20px; 
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: calc(100% - 22px); 
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s ease; 
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    outline: none;
+    border-color: #3498db;
+}
+
+input[type="submit"] {
+    width: 100%;
+    background: #3498db;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background: #2980b9; 
+}
+
+/* Estilos para resaltar errores del formulario */
+
+input[type="text"], input[type="email"], textarea {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="text"]:invalid, input[type="email"]:invalid, textarea:invalid {
+    border: 1px solid red;
+}
+

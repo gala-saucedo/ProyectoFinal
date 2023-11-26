@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <title>Tienda Shop</title>
+</head>
+<body id="body" class="home-page">
+    <div class="barra">
+        <aside>
+            <header>
+                <h1 class="logo">TiendaShop</h1>
+            </header>
+            <nav>
+                <ul class="menu">
+                    <li>
+                        <button id="modo-oscuro"><i class="bi bi-sun-fill"></i><i class="bi bi-moon-fill"></i></button>
+                    </li>
+                    <li>
+                        <a class="boton-menu" href="./index.html">Home</a>
+                    </li>
+                    <li>
+                        <a class="boton-menu" href="./pages/productos.html">Todos los Productos</a>
+                    </li>
+                    <li>
+                        <a class="boton-menu" href="./pages/contactos.html">Contacto</a>
+                    </li>
+                    <li>
+                        <a class="boton-carrito boton-menu" href="./pages/carrito.html"><i class="bi bi-cart-fill"></i>Carrito <span class="numero"> </span></a>
+                    </li>
+                </ul>
+            </nav>
+            <footer>
+              <p class="texto-footer">© 2023 Gala</p>
+          </footer>
+        </aside>
+        <main>
+            <h2 class="titulo-principal">Home</h2>
+            <div class="swiper">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                  <!-- Slides -->
+                  <div class="swiper-slide">Slide 1</div>
+                  <div class="swiper-slide">Slide 2</div>
+                  <div class="swiper-slide">Slide 3</div>
+                  ...
+                </div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
+              
+                <!-- If we need navigation buttons -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+              
+                <!-- If we need scrollbar -->
+                <div class="swiper-scrollbar"></div>
+              </div>
+        </main>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>
