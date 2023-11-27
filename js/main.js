@@ -28,9 +28,7 @@ const nodosCards = (data, container) => {
 }
 
 function agregarAlCarrito(producto) {
-
-    const productoObjeto = JSON.stringify(producto)
-    carrito.push(productoObjeto)
+    carrito.push(producto)
     actualizarCarritoDOM()
 
     localStorage.setItem("carrito", JSON.stringify(carrito))
@@ -322,10 +320,12 @@ document.addEventListener("DOMContentLoaded", function() {
                 slide.classList.add(`swiper-slide`)
                 slide.innerHTML = `
                     <div class = "producto">
+                    <div 
+                    class="oferta-banner">Oferta</div>
                     <img class = "carrusel-img" src="${producto.image}" alt="${producto.title}">
                         <h3>${producto.title}</h3>
                         <p>Precio: $${producto.price}</p>
-                        <button class="comprar-button" data-producto='${JSON.stringify(producto)}'>
+                        <button class="comprar-button" data-producto='${JSON.stringify(producto.id)}'>
                          Comprar </button>
                     </div>`
 
@@ -346,7 +346,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 el: '.swiper-scrollbar',
                 },
             });
-            botonCompra()
+            botonCompra(data)
         })
         .catch(error => {
             console.error("error", error)
@@ -354,15 +354,17 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 })
 
-function botonCompra() {
-    
+function botonCompra(data) {
+
     const comprarButtons = document.querySelectorAll(`.comprar-button`)
     comprarButtons.forEach(button => {
 
-        button.addEventListener(`click`, () => {
-            const productoData = button.getAttribute(`data-producto`)
+        button.addEventListener(`click`, (event) => {
+            const id = button.getAttribute(`data-producto`)
+            const productoSeleccionado = data.find((producto) => producto.id === parseInt(id))
+
             try {
-                agregarAlCarrito(productoData)
+                agregarAlCarrito(productoSeleccionado)
             }
             catch (error) {
                 throw error

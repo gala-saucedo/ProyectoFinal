@@ -31,7 +31,9 @@ aside {
 .menu {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 2.5rem; 
+    padding-top: 1rem; 
+    padding-bottom: 1rem; 
 }
 .boton-menu{
     background-color: transparent;
@@ -40,6 +42,15 @@ aside {
     align-items: center;
     font-weight: 500;
     text-decoration: none;
+}
+
+.boton-menu:hover {
+    color: rgb(110, 173, 173);
+    transition: color 0.3s ease; 
+}
+
+.boton-activo {
+    background-color: rgba(110, 173, 173, 0.1); /
 }
 
 .texto-footer {
@@ -87,18 +98,34 @@ main {
     position: relative;
 }
 
+.oferta-banner {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #ff6b6b;
+    color: white;
+    padding: 4px 8px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+
 /* Estilos para el botón de compra */
 .comprar-button {
     position: absolute; 
     bottom: 10px; 
+    font-size: 0.9rem; 
+    padding: 8px 12px; 
     right: 10px; 
     z-index: 1; 
-    background: rgba(0, 0, 0, 0.5); 
+    background-color: #3498db;
     color: white;
     border: none;
     border-radius: 5px; 
     padding: 5px 10px; 
     cursor: pointer; 
+    transition: background-color 0.3s ease;
 }
 
 /* estilos de todos los productos */
@@ -265,6 +292,23 @@ body.dark-mode #modo-oscuro i.bi-moon-fill {
 .producto-carrito:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     transform: translateY(-3px);
+}
+
+.finalizar-compra {
+    background-color: rgb(25, 29, 64);;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.finalizar-compra:hover {
+    background-color: #e74c3c;
 }
 
 /* estilos del formulario */
